@@ -5,7 +5,7 @@ Grafo G = conjunto de vértices, interconados dois a dois por arestas.
 Problema do caminho Hamiltoniano
 Dois vetores (linha e colula) para armazenar os 8 movimentos em L do cavalo, identificação do movimento: indice dos vetores
 Pilha: (coordenada x anterior, coordenada y anterior, mov
-Não da para fazer um novo movimento e não andou todo o tabuleiro: desempilha a posição antiga e tenta o movimento antigo + 1 a partir dessa posição. */
+Não da para fazer um novo movimento e não andou todo o tabuleiro: desempilha a posição antiga e tenta o movimento antigo + 1 a partir dessa posição.
 Testou tudo e a pilha ta vazia == não nenhuma solução. */
 
 #include 'pilha.h'
