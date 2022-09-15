@@ -44,7 +44,7 @@ void aumentaFila(fila *f) {
         w[i] = f->v[(f->ini + 1) % f->max];
     }
     f->ini = 0;
-    f->fim = f->max;
+    f->fim = f->max - 1;
     f->max = 2 * f->max;
     free(f->v);
     f->v = w;
