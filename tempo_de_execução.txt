@@ -1,0 +1,21 @@
+Tempo de execução/ notação assintótica:
+
+• Analisar a quantidade de operações primitivas e passos básicos:
+- Operações aritméticas;
+- Operações lógicas;
+- Operações relacionais;
+- Operações de controle; 
+- Movimentação de variáveis. 
+
+• Associado ao tamanho da entrada.
+
+• Olhamos para o termo de maior ordem, ignorando constantes e termos de menor ordem, pois o primeiro cresce mais rápido. 
+
+• Notação O e Ω (θ, o, ω):
+DEF: f(n) = O(g(n)) se existe C e no tal que se n >= no, então f(n) <= C * g(n).
+Pensamos no pior caso.
+- O limita superiormente: -> pior dos casos.
+  nlogn = O(n²) -> n² cresce mais que nlogn.
+  logn = O(raizn) -> raízes cresce mais que logn.
+- Ω limita interiormente: -> melhor dos casos
+- Usaremos de maneira informal.
