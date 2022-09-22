@@ -19,3 +19,20 @@ Pensamos no pior caso.
   logn = O(raizn) -> raízes cresce mais que logn.
 - Ω limita interiormente: -> melhor dos casos
 - Usaremos de maneira informal.
+
+• Ordenação ordenação de vetores (sort):
+|–––––––––––––––––––––––––––––––––––––|
+|     n²    |    nlogn    |     n     |
+|–––––––––––––––––––––––––––––––––––––|
+|bubble     |    merge    |   radix   | 
+|insertion  |    quick*   |   bucket  |
+|selection  |    heap     |  counting |
+|–––––––––––––––––––––––––––––––––––––|
+
+- insertionsort: pior caso: você quer o vetor em ordem crescente e ele entra em ordem decrescente -> tempo de execução de n².
+
+- *quicksort no pior caso (raro) que vai levar um tempo quadrático (n²).
+
+- mergesort: algoritmo recursivo:
+Divide até chegar em um vetor de uma célula -> logn
+Vai juntando os vetores de uma células e vai as ordenando. -> compara os vetores ordenados e vai ordenando...
