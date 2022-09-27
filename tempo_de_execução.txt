@@ -38,6 +38,12 @@ Pensamos no pior caso.
 - insertionsort: pior caso: você quer o vetor em ordem crescente e ele entra em ordem decrescente -> tempo de execução de n².
 
 - *quicksort no pior caso (raro) que vai levar um tempo quadrático (n²).
+Algoritmo recursivo.
+Pivô: você escolhe, nas aulas sempre escolheremos o último cara do vetor  
+Movemos o pivô para a sua posição certa. 
+Todo mundo a esquerda tem que ser menor ou igual ao pivô, e a direita todo mundo tem q ser maior (não são pedaços necessariamente ordenados).
+Recursivamente escolhemos outros pivôs e fazemos o mesmo (continuando assim ordenamentos o vetor).
+Dependendo dos pivôs, a partição não necessariamente vai dividir o vetor no meio cada vez (melhor caso).
 
 - mergesort: algoritmo recursivo:
 Divide até chegar em um vetor de uma célula -> logn
