@@ -22,6 +22,9 @@ Pensamos no pior caso.
 - Θ é O e Ω ao mesmo tempo.
 - Usaremos de maneira informal.
 
+- F(n) = O(g(n)) se existe K, n0: n>=n0 => F(n) <= K * g(n).
+- F(n) = Ω(g(n)) se existe j, n0: n<=n0 => F(n) >= k * g(n).
+
 • Ordenação ordenação de vetores (sort):
 |–––––––––––––––––––––––––––––––––––––|
 |     n²    |    nlogn    |     n     |
