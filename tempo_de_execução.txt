@@ -17,7 +17,9 @@ Pensamos no pior caso.
 - O limita superiormente: -> pior dos casos.
   nlogn = O(n²) -> n² cresce mais que nlogn.
   logn = O(raizn) -> raízes cresce mais que logn.
-- Ω limita interiormente: -> melhor dos casos
+  Lembrar que é menor, igual.
+- Ω limita inferiormente: -> melhor dos casos.
+- Θ é O e Ω ao mesmo tempo.
 - Usaremos de maneira informal.
 
 • Ordenação ordenação de vetores (sort):
