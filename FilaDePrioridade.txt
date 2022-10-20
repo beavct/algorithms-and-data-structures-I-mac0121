@@ -1,0 +1,81 @@
+I. Fila de prioridade:
+*Coleção de itens com prioridade associada a ele.
+*Operações:
+- Consulta o item de maior prioridade.
+- Remove o de maior prioridade.
+- Alterar as prioridades de um item.
+- Construir a estrutura.
+
+ I.I. Heap binário:
+ - Visualizar como árvore binária, o nó tem prioridade maior que seus (dois) ramos.
+ - Implementação com vetor (preenche com os dados da árvore de cima para baixo e dá esquerda para direita).
+ - Onde estão os dois ramos do nó i: 2i e 2i+1, para 2i e 2i+1 <= n.
+ - Nó pai de um elemento na posição i, está na posição i/2.
+ - Só o último nível pode não estar totalmente preenchido (para que as propriedades anteriores sejam mantidas).
+ - Para cada elemento x do heap, temos atributos (estrutura):
+  - x prioridade;
+  - x índice;
+  - x valor.
+
+ - Um vetor é um heap se satisfaz a propriedade de heap:
+  - Todo nó tem prioridade maior ou igual à prioridade de seus ramos.
+   Ou seja, para 2<=i<=n: H[i/2].prioridade >= H[i].prioridade.
+
+ - Estruturas:
+  - H.tamanho: quantidade de itens armazenados no heap.
+  - H.capacidade: quantidade máxima de itens que podem ser armazenados.
+
+  *consultaHeap (H): retorna H[1] (estamos inutilizando o índice 0).
+  
+  - Correção sa estrutura do heap:
+  *CorrigeHeapDescendo (H, i (indice)):
+   - Assume que árvores com raízes em H[2i] e H[2i+1] são heaps (ou seja, estão certinhos)
+
+   - maior = i;
+   - se 2i<=H.tamanho (se tem filho esquerdo) e H[2i].prioridade > H[maior].prioridade;
+    - maior = 2i;
+   - se 2i+1<=H.tamanho (se tem filho direito) e H[2i+1].prioridade > H[maior].prioridade;
+    - maior = 2i+1;
+
+   - se maior != i;
+    - troca H[i].índice com H[maior].índice;
+    - troca H[i] com H[maior];
+
+   - recursivamente chama a função pra corrigir:
+     CorrgieHeapDescendo (H, maior(indice));
+   - critério de parada: quando chegar na folha.
+
+  *CorrigeHeapSubindo (H, i):
+   - Assume que o que vem antes do nó errado está correto.
+   - Quando chega na raiz acaba.
+
+   - Assume que H[1,...,i-1] é heap.
+
+   - pai = [i/2];
+   - se i>=2 e H[pai].prioridade < H[i].prioridade;
+    - troca H[pai].índice com H[i].índice;
+    - troca H[pai] com H[i];
+    - recursivamente chama a função e corrige pra cima.
+
+  - n = H.tamanho:
+   - os últimos [n/2]+1 elementos são folhas.
+   - árvores com raízes nas folhas são sempre heaps (então só tem que começar a corrigir para cima das folhas).
+   *ConstroiHeap (H, n):
+    - H.tamanho = n;
+    - para i=1 até H.tamanho:
+     - H[i].índice = i;
+    - para i = [n/2] até 1:
+     - CorrigeDescendo (H, i).
+
+  - Tempo de execução: pior caso: O(nlogn), caso daora: O(n) - linear.
+
+ I.II: HeapSort:
+ - Invariante: H[1,...,i] = menores elementos de H, ainda não ordenados.
+ - Invariante: H[i+1,...,n] = maiores elementos de H, já ordenados.
+
+ - Jogaremos a raiz (maior valor) na última posição.
+  - O elementos da última posição está correto, mas o que foi colocado na raiz está errado, e precisamos que se mantenha o heap, então chamamos a função Corrige descendo e como parâmetro passamos o vetor heap, descontando o cara da última posição pois ele já está correto (H.tamanho = H.tamanho - 1);
+  - Faremos isso recursivamente até o H.tamanho = 1;
+  - i = n até 1;
+ - Tempo de execução: O(nlogn).
+
