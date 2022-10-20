@@ -79,3 +79,11 @@ I. Fila de prioridade:
   - i = n até 1;
  - Tempo de execução: O(nlogn).
 
+
+HeapSort (H, n) { //pseudo
+    ConstroiHeap (H, n);
+    Para i = n até 2;
+      troca H[1] com H[i];
+      H.tamanho--;
+      CorrigeDescendo (H, 1);
+}
