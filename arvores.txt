@@ -1,0 +1,34 @@
+- Nó/vértice principal: raiz.
+- Todo nó que não é a raiz tem um pai (acima), e pode ter filhos (que vem abaixo).
+- Nós que vem abaixo: descendentes.
+- Nós que vem acima: ascendentes. 
+- Folha: todos os nós que não tem filhos.
+
+• Definição recursiva de árvore:
+ - Árvore é:
+  - Vazia;
+  - Um nó cujos filhos são raízes de árvores.
+ - Altura da árvore:
+  - Quantidade de arestas entre a raíz e a folha mais longe.
+ - Árvore k-ária:
+  - Todo vértice que não é folha tem no máximo k filhos.
+
+• Árvore binária:
+ - Quantidade máxima de folhas: 2**h (sendo h sua altura).
+ - Quantidade máxima de vértices: 2**h+1 -1.
+
+ - Árvore binária completa: 
+  - Toda preenchida bonitinha em todos os níveis. 
+  - Árvore de altura h com 2**h folhas e 2**h+1 -1 vértices. 
+
+ - Árvore vazia:
+  - Convenção: h = -1.
+
+ - Convenção: não há elementos repetidos na árvore (para a nossa aplicação).
+
+• Árvore binária de busca (ordem associada): 
+ - Propriedade extra (de busca): Para todo nó x:
+  - Elementos à esquerda: Possuem chaves menores que a de x;
+  - Elementos à direita: Possuem chaves maiores que a de x.
+
+
