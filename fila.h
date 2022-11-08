@@ -1,21 +1,20 @@
-typedef struct {
-    item *v;
-    int ini;
-    int fim;
-    int max;
-} fila;
+#include "arv.h"
+
+typedef no * item;
+
 
 typedef struct {
-    int l;
-    int c;
-} pos;
+  item *v; 
+  int ini; 
+  int fim; 
+  int max; 
+} fila; 
 
-typedef pos item;
-
-fila *criafila();
-void destroifila(fila *f);
-int filaVazia(fila *f);
-item primeiroFila(fila *f);
-void insereFila(fila *f, item x);
-void aumentaFila(fila *f);
-item removeFil(fila *f);
+fila * criaFila ();
+void destroiFila (fila *f);
+int filaVazia (fila *f);
+item primeiroFila (fila *f);
+void insereFila (fila *f, item x);
+item removeFila (fila *f);
+void aumentaFila (fila *f);
+ 
