@@ -2,7 +2,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "fila.h"
+#include "arv.h"
+
+
+
+no * minimo (no * raiz){
+  if (raiz == NULL || raiz->esq == NULL)
+    return raiz;
+  return minimo(raiz->esq);
+} 
 
 
 /* recebe a raiz de uma árvore e devolve quantos nós ela tem 
@@ -61,7 +69,7 @@ void inordem (no *raiz);
 void inordem (no *raiz) {
   if (raiz != NULL){
     inordem (raiz->esq);
-    printf("%d ", raiz->chave);
+    printf("%d %s\n", raiz->valor, raiz->chave);
     inordem (raiz->dir);
   }
 }
@@ -75,7 +83,7 @@ void preordem (no *raiz);
 
 void preordem (no *raiz) {
   if (raiz != NULL){
-    printf("%d ", raiz->chave);
+    printf("%d %s\n", raiz->valor, raiz->chave);
     preordem (raiz->esq);
     preordem (raiz->dir);
   }
@@ -91,7 +99,7 @@ void posordem (no *raiz) {
   if (raiz != NULL){
     posordem (raiz->esq);
     posordem (raiz->dir);
-    printf("%d ", raiz->chave);
+    printf("%d %s\n", raiz->valor, raiz->chave);
   }
 }
 
@@ -107,7 +115,7 @@ void folhasDescendentes (no *x);
 void folhasDescendentes (no *x){
   if (x != NULL){
     if (x->esq == NULL && x->dir == NULL){
-      printf("%d ", x->chave);
+      printf("%d %s\n", x->valor, x->chave);
       return;
     }
     folhasDescendentes (x->esq);
@@ -115,28 +123,4 @@ void folhasDescendentes (no *x){
   }
 }
 
-
-/******
-Busca em largura 
-
-void largura (no *raiz); 
-
-Imprime os nós da árvore em largura
-*******/
-
-void largura (no *raiz){
-  fila * f = criaFila();
-  no *p; 
-  if (raiz != NULL){
-    insereFila (f, raiz);
-    while (!filaVazia(f)){
-      p = removeFila(f);
-      printf("%d ", p->chave);
-      if (p->esq != NULL)
-	insereFila (f,  p->esq);
-      if (p->dir != NULL)
-	insereFila (f, p->dir);
-    }
-  }
-}
 

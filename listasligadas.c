@@ -11,6 +11,7 @@ void imprimeLista (celula * inicio) {
   else printf("\n"); 
 }
 
+ 
 void imprimeListaIterativo (celula * inicio) {
   celula * p;
   for (p = inicio; p != NULL; p = p -> prox)
@@ -18,20 +19,20 @@ void imprimeListaIterativo (celula * inicio) {
   printf("\n");
 } 
 
-celula * busca (celula * inicio, item x) {
+celula * busca (celula * inicio, chave x) {
   if (inicio == NULL || inicio -> info == x)
     return inicio;
   return (busca (inicio->prox, x));
 }
 
-celula * buscaIterativa (celula * inicio, item x) {
+celula * buscaIterativa (celula * inicio, chave x) {
   celula * p;
   for (p = inicio; p != NULL && p->info != x; p = p->prox);
   return p;
 }
 
 
-celula * insereNoInicio (celula * inicio, item x){
+celula * insereNoInicio (celula * inicio, chave x){
   celula * novo = malloc(sizeof(celula));
   novo->info = x;
   novo->prox = inicio;
@@ -40,7 +41,7 @@ celula * insereNoInicio (celula * inicio, item x){
 
 
 
-celula * removelista (celula * inicio, item x){
+celula * removelista (celula * inicio, chave x){
   celula * p;
   celula * ant;
   celula * cabeca;
@@ -65,7 +66,7 @@ celula * removelista (celula * inicio, item x){
 }
 
 
-celula * insereNoFim (celula * inicio, item x) {
+celula * insereNoFim (celula * inicio, chave x) {
   celula *novo = malloc(sizeof (celula));
   celula *atual, *ant; 
   novo->info = x;
@@ -80,7 +81,7 @@ celula * insereNoFim (celula * inicio, item x) {
 }
 
 
-celula * insereNoFimRec (celula * inicio, item x) {
+celula * insereNoFimRec (celula * inicio, chave x) {
   if (inicio == NULL) {
     inicio = malloc (sizeof(celula));
     inicio->info = x;
@@ -90,11 +91,5 @@ celula * insereNoFimRec (celula * inicio, item x) {
   
   return inicio;
 } 
-
-  
-  
-
-
-
 
   
