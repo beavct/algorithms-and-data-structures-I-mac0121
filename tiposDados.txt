@@ -1,0 +1,26 @@
+* Tipos abstratos de dados (ADT0):
+Não se preocupa (ainda) com a implementação, e sim com a abstração.
+
+- Maneira como as informações são modeladas como objeto matemático.
+- Conjunto de operações definidas sobre os objetos.
+
+- Maneira na qual os objetos serão armazenados.
+- Os algoritmos que são usados para executar as operações com a representação escolhida.
+
+Ex:
+void Data (int dia, ins mes, int ano); cria um objeto do tipo data
+int dia (data x)
+int mes (data x)
+int ano (data x)
+void imprime (data x)
+
+* Tabela de símbolos (ou dicíonário):
+- Chave e valor: número de matrícula e nome; site e ip do site; etc.
+ - A tabela não tem dois elementos com a mesma chave.
+ - Chaves são comparáveis.
+- Aplicações: adicionar, remover, verificar o elemento, modificar... (para o valor e para a chave)
+
+Ex cód:
+- Somente as funções principais.
+- Implementação com árvore binária.
+- Implementações na tabelaSimbolos.h e tabelaSimbolos.c
