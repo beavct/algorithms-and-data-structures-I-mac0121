@@ -1,0 +1,43 @@
+Aula 01/12/2022 - SKIP LISTS:
+
+- Sites de referẽncia:
+    - https://www.geeksforgeeks.org/skip-list/
+    - https://www.geeksforgeeks.org/skip-list-set-2-insertion/?ref=rp
+    - https://www.geeksforgeeks.org/skip-list-set-3-searching-deletion/?ref=rp
+
+- Ponto negativo de manter chaves dentro de uma lista ligada:
+    - Para a busca talvez você tenha que percorrer toda a lista (pior caso), e talvez o elemento nem esteja na lista;
+    - Ou seja, no pior caso tem tempo linear para a busca (O(n));
+    - Mesmo se a lista estivesse ordenada, ainda teria o problema de busca e inserção de elementos, pois o tempo ainda poderia ser linear no pior caso.
+
+- Skip lists:
+    - Forma alternativa;
+    - Estrutura ordenada probabilística qie generaliza listas ligadas;
+    - Queremos melhorar o tempo de busca da lista ligada.
+
+    - Alguns nós vão ter ponteiros a mais que vão permitir que se pule mais nós de uma vez;
+    - Vamos sempre tentar pular primeiro pelos nós mais altos (que vão ter um skip maior).
+
+- Quantidade de ponteiros em cada nó:
+    - Vamos nos referir aos ponteiros como níveis;
+    - A cabeça da lista sempre vai ter o número máximo de ponteiros.
+
+    - Intuição:
+        - n: tem pelo menos 1 ponteiro;
+        - n/t: tem pelo menos 2 ponteiros;
+        - n/t²: tem pelo menos 3 ponteiros;
+        - ... para conseguirmos tempo logaritmo em cada processo (na média);
+        - Probabilidade do nó ter j+1 ponteiros = 1/t^j;
+        - Quantidade máxima de níveis log_t n.
+
+- Busca:
+    - Tenta pular pelo nível mais alto, se a chave que esse ponteiro aponta for maior, você desce um nível, caso contrário vocẽ pula;
+    - Ou seja, se a chave for menor, pula, se não desce um nível;
+    - Vai fazendo isso recursivamente até encontrar a chave (ou se não encontrar a chave).
+
+- Inserção:
+    - O nó que vai ser inserido vai ter uma probabilidade p de ter n ponteiros, caso ele "barre" o caminho de outros ponteiros, estes deverão ser consertados para apontarem para os nó corretos.
+
+- Remoção: 
+    - Faz a busca, acha o cara, libera o nó e arruma os ponteiros.
+    - (...) 
