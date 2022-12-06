@@ -1,0 +1,20 @@
+ÁRVORE BINŔIA DE BUSCA ALEATORIZADA:
+Aula 06/12/2022.
+
+- Tentar manter a altura logarítmica;
+
+- Inserção: 
+    - Um novo elemento pode ser inserido trivialmente em uma das folhas.
+
+- Remoção:
+    - Se o elemento está na folha -> remoção trivial.
+    - Se tiver filhos -> somente 1: trivial também, só mexer nos ponteiros;
+                      -> tem os 2 filhos: tem que ver o melhor candidato para mudar a raiz da subárvore;
+
+- Rotações:
+    - Propriedade local;
+    - Rotação à esquerda e à direita;
+    - Mantém a propriedade de busca;
+    - Sites: https://www.geeksforgeeks.org/flip-binary-tree/
+           : https://www.programmersought.com/article/70461195983/
+           : https://www.codesdope.com/course/data-structures-red-black-trees-insertion/
