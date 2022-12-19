@@ -39,6 +39,6 @@ int main() {
   preordem(p);
 
   free(p);
-
+  return 0;
 }
 
