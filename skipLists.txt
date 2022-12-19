@@ -12,7 +12,7 @@ Aula 01/12/2022 - SKIP LISTS:
 
 - Skip lists:
     - Forma alternativa;
-    - Estrutura ordenada probabilística qie generaliza listas ligadas;
+    - Estrutura ordenada probabilística que generaliza listas ligadas;
     - Queremos melhorar o tempo de busca da lista ligada.
 
     - Alguns nós vão ter ponteiros a mais que vão permitir que se pule mais nós de uma vez;
@@ -31,12 +31,12 @@ Aula 01/12/2022 - SKIP LISTS:
         - Quantidade máxima de níveis log_t n.
 
 - Busca:
-    - Tenta pular pelo nível mais alto, se a chave que esse ponteiro aponta for maior, você desce um nível, caso contrário vocẽ pula;
+    - Tenta pular pelo nível mais alto, se a chave que esse ponteiro aponta for maior, você desce um nível, caso contrário você pula;
     - Ou seja, se a chave for menor, pula, se não desce um nível;
     - Vai fazendo isso recursivamente até encontrar a chave (ou se não encontrar a chave).
 
 - Inserção:
-    - O nó que vai ser inserido vai ter uma probabilidade p de ter n ponteiros, caso ele "barre" o caminho de outros ponteiros, estes deverão ser consertados para apontarem para os nó corretos.
+    - O nó que vai ser inserido vai ter uma probabilidade p de ter n ponteiros, caso ele "barre" o caminho de outros ponteiros, estes deverão ser consertados para apontarem para os nós corretos.
 
 - Remoção: 
     - Faz a busca, acha o cara, libera o nó e arruma os ponteiros.
